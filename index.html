@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <!-- ------------CSS link---------------- -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <!-- -------HEAD------------------ -->
+      <div class="head">
+        <h1>CRUD</h1>
+        <p>Create Read Update Delete</p>
+      </div>
+      <!-- ------------------------------ -->
+
+      <!-- -------INPUTS---------------- -->
+      <div class="inputs">
+        <input type="text" placeholder="Title" id="title" />
+
+        <div id="total-counters">
+          <input
+            onkeyup="calcTotal();"
+            type="number"
+            placeholder="Price"
+            id="price"
+          />
+          <input
+            onkeyup="calcTotal();"
+            type="number"
+            placeholder="Taxes"
+            id="taxes"
+          />
+          <input
+            onkeyup="calcTotal();"
+            type="number"
+            placeholder="Ads"
+            id="ads"
+          />
+          <input
+            onkeyup="calcTotal();"
+            type="number"
+            placeholder="Discount"
+            id="discount"
+          />
+          <!-- Total Calc -->
+          <small id="total"></small>
+        </div>
+
+        <input type="number" placeholder="Count" id="count" />
+        <input type="text" placeholder="Category" id="category" />
+
+        <button id="createButton" onclick="create()">Create</button>
+      </div>
+      <!-- ------------------------------ -->
+      <!-- --------OUTPUTS--------------------- -->
+      <div class="outputs">
+        <div class="search">
+          <input type="text" placeholder="Search" id="searchBar" onkeyup="searchTable(this.value)" />
+          <div class="searchButtons">
+            <button id="searchByTitle" onclick="searchMode(this.id)">
+              Search By Title
+            </button>
+            <button id="searchByCategory" onclick="searchMode(this.id)">
+              Search By Category
+            </button>
+          </div>
+        </div>
+        <div id="deleteAll"></div>
+        <!-- ----------THE TABLE------------- -->
+        <table class="myTable">
+          <tr>
+            <th>Id</th>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <th>TAXES</th>
+            <th>ADS</th>
+            <th>DISCOUNT</th>
+            <th>TOTAL</th>
+            <th>CATEGORY</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+          </tr>
+          <!-- ------------PUSH HERE----------- -->
+          <tbody id="insertHere"></tbody>
+        </table>
+        <!-- -------------------------------- -->
+      </div>
+    </div>
+
+    <!-- -----------script Link-------------- -->
+    <script src="index.js"></script>
+  </body>
+</html>
